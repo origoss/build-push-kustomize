@@ -8,6 +8,12 @@ inputs:
   ovpnPath:
     description: 'path to the GPG encrypted ovpn profile inside the repo'
     default: 'client.ovpn.gpg'
+  ovpnUsername:
+    description: 'Ovpn username'
+    required: true
+  ovpnPassword:
+    description: 'Ovpn password'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
