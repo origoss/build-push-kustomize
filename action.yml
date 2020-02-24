@@ -14,6 +14,9 @@ inputs:
   ovpnPassword:
     description: 'Ovpn password'
     required: true
+  ovpnPassFilename:
+    description: 'filename of the generated file with the ovpn username/password'
+    default: 'pass.txt'
 runs:
   using: 'docker'
   image: 'Dockerfile'
