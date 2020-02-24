@@ -2,14 +2,12 @@ name: 'Container Action Template'
 description: 'Get started with Container actions'
 author: 'Gergely Szabo'
 inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
   gpgPassphrase:
     description: 'GPG passphrase to use to decrypt the ovpn profile'
     required: true
+  ovpnPath:
+    description: 'path to the GPG encrypted ovpn profile inside the repo'
+    default: 'client.ovpn.gpg'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.myInput }}
