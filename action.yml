@@ -5,6 +5,9 @@ inputs:
   myInput:
     description: 'Input to use'
     default: 'world'
+  gpgPassphrase:
+    description: 'GPG passphrase to use to decrypt the ovpn profile'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
