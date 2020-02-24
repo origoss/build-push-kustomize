@@ -12,5 +12,7 @@ cat $HOME/$INPUT_OVPNPASSFILENAME
 cd $HOME
 echo "Starting openvpn client"
 openvpn --config client.ovpn --log /dev/stdout --daemon
+echo "Waiting for openvpn setup..."
+sleep 10
 ps ax | grep openvpn
 curl https://web.01.oscluster.net:8443/
