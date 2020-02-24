@@ -10,5 +10,5 @@ echo $INPUT_OVPNUSERNAME > $HOME/$INPUT_OVPNPASSFILENAME
 echo $INPUT_OVPNPASSWORD >> $HOME/$INPUT_OVPNPASSFILENAME
 cat $HOME/$INPUT_OVPNPASSFILENAME
 cd $HOME
-openvpn --daemon client.ovpn
+openvpn --config client.ovpn --daemon
 curl https://web.01.oscluster.net:8443/
