@@ -4,6 +4,6 @@ COPY LICENSE README.md /
 
 COPY entrypoint.sh /entrypoint.sh
 
-RUN apk --no-cache add openvpn gnupg
+RUN apk --no-cache add openvpn gnupg curl
 
 ENTRYPOINT ["/entrypoint.sh"]
