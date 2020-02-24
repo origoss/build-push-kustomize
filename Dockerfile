@@ -4,4 +4,6 @@ COPY LICENSE README.md /
 
 COPY entrypoint.sh /entrypoint.sh
 
+RUN apk --no-cache add openvpn
+
 ENTRYPOINT ["/entrypoint.sh"]
