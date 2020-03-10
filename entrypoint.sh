@@ -16,25 +16,25 @@ cat /registry-config.yml.tmpl | envsubst | tee /registry-config.yml
 
 cd /github/home
 
-for f in $INPUT_IMAGE_NAMES
+for f in $INPUT_IMAGENAMES
 do
     makisu build \
-           -f Dockerfile.${f}${INPUT_DOCKERFILE_SUFFIX}     \
-           -t ${INPUT_IMAGE_TAG_PREFIX}${f}${INPUT_IMAGE_TAG_SUFFIX}    \
+           -f Dockerfile.${f}${INPUT_DOCKERFILESUFFIX}     \
+           -t ${INPUT_IMAGETAGPREFIX}${f}${INPUT_IMAGETAGSUFFIX}    \
            --registry-config=/registry-config.yml \
            --push index.docker.io                      \
            .
 done
 
-if [[ -d $INPUT_KUSTOMIZE_REPO_PATH ]]
+if [[ -d $INPUT_KUSTOMIZEREPOPATH ]]
 then
-    cd $INPUT_KUSTOMIZE_REPO_PATH
-    for f in $INPUT_IMAGE_NAMES
+    cd $INPUT_KUSTOMIZEREPOPATH
+    for f in $INPUTIMAGENAMES
     do
-        kustomize edit set image $f=${INPUT_IMAGE_TAG_PREFIX}${f}${INPUT_IMAGE_TAG_SUFFIX}
+        kustomize edit set image $f=${INPUT_IMAGETAGPREFIX}${f}${INPUT_IMAGETAGSUFFIX}
     done
 fi
 
-git config user.name $INPUT_GIT_USER_NAME
-git config user.email $INPUT_GIT_USER_EMAIL
+git config user.name $INPUT_GITUSERNAME
+git config user.email $INPUT_GITUSEREMAIL
 git commit -am "Updating image tags for '${INPUT_IMAGE_NAMES}' using tag suffix ${INPUT_IMAGE_TAG_SUFFIX}"
