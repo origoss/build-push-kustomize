@@ -4,31 +4,31 @@ author: 'Gergely Szabo'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  inputs: 
-    imageNames:
-      description: 'Names of the images that are to be built'
-      required: true
-    imageTagPrefix:
-      description: 'Image tag prefix. Image names are appended to this prefix.'
-      required: true
-    imageTagSuffix:
-      description: 'Image tag suffix.'
-      required: true
-    dockerfileSuffix:
-      description: 'Suffix of the Dockerfile.'
-      required: true
-    dockerUsername:
-      description: 'Docker Hub login user name'
-      required: true
-    dockerPassword:
-      description: 'Docker Hub login password'
-      required: true
-    kustomizeRepoPath:
-      description: 'Path to the kustomize repo'
-      required: true
-    gitUserName:
-      description: 'Git config user name'
-      default: "Github Actions"
-    gitUserEmail:
-      description: 'Git config user name'
-      default: "noreply@test.io"
+inputs: 
+  imageNames:
+    description: 'Names of the images that are to be built'
+    required: true
+  imageTagPrefix:
+    description: 'Image tag prefix. Image names are appended to this prefix.'
+    required: true
+  imageTagSuffix:
+    description: 'Image tag suffix.'
+    required: true
+  dockerfileSuffix:
+    description: 'Suffix of the Dockerfile.'
+    required: true
+  dockerUsername:
+    description: 'Docker Hub login user name'
+    required: true
+  dockerPassword:
+    description: 'Docker Hub login password'
+    required: true
+  kustomizeRepoPath:
+    description: 'Path to the kustomize repo'
+    required: true
+  gitUserName:
+    description: 'Git config user name'
+    default: "Github Actions"
+  gitUserEmail:
+    description: 'Git config user name'
+    default: "noreply@test.io"
