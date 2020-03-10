@@ -14,7 +14,7 @@ set -x
 
 cat /registry-config.yml.tmpl | envsubst | tee /registry-config.yml
 
-cd /github/home
+cd /github/workspace
 
 for f in $INPUT_IMAGENAMES
 do
