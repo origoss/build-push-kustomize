@@ -1,0 +1,9 @@
+index.docker.io:
+  .*:
+    security:
+      tls:
+        client:
+          disabled: false
+      basic:
+        username: "$INPUT_DOCKER_USERNAME"
+        password: "$INPUT_DOCKER_PASSWORD"
